@@ -9,24 +9,25 @@ export default function Footer() {
 	return (
 		<footer className="">
 			<div className="bg-third py-4">
-				<div className=" flex items-center justify-between mx-[10%]">
+				<div className=" flex flex-col xl:flex-row  items-center justify-between mx-[5%] xl:mx-[10%]">
 					<div className="flex items-center justify-center gap-2">
 						<div className="w-5 h-5">
 							<img src={char} alt="char" className="w-full h-full" />
 						</div>
-						<div className="text-sm">
+						<div className="text-sm text-center">
 							Passenger Statics from 21/11/2023 - 17/12/2023 2,373,804 passenger
 							trips.
 						</div>
 					</div>
-					<div className="flex gap-4 items-center justify-center">
+					<div className="flex flex-col xl:flex-row gap-4 items-center justify-center">
 						<div className="text-gray-700 text-sm">Search Sitemap</div>
 						<select
+							defaultValue={"DEFAULT"}
 							name="search"
 							id="search"
 							className="px-4 py-2 w-[240px] rounded-lg outline-none text-sm  "
 						>
-							<option className="" value="select" disabled selected>
+							<option value="DEFAULT" disabled>
 								Select Menu
 							</option>
 						</select>
@@ -35,11 +36,11 @@ export default function Footer() {
 			</div>
 
 			<div className="bg-four py-4">
-				<div className="grid grid-cols-2 mx-[10%]">
-					<div className="col-span-1 flex flex-col gap-4">
-						<h1>MRT Pink Line Khae Rai - Min Buri</h1>
-						<div className="flex gap-4 text-sm text-gray-600">
-							<ul className="flex flex-col gap-2 mr-[100px]">
+				<div className="grid  grid-cols-1 md:grid-cols-2 gap-4 mx-[5%] xl:mx-[10%]">
+					<div className="col-span-1 items-center md:items-start flex flex-col  gap-4">
+						<h1 className="text-center">MRT Pink Line Khae Rai - Min Buri</h1>
+						<div className="flex items-center justify-center  text-sm text-gray-600">
+							<ul className="flex flex-col gap-2 mr-[100px] text-center md:text-start">
 								<li className="hover:text-secondary cursor-pointer">
 									About Us
 								</li>
@@ -54,7 +55,7 @@ export default function Footer() {
 								</li>
 							</ul>
 
-							<ul className="flex flex-col gap-2">
+							<ul className="flex flex-col gap-2 text-center md:text-start">
 								<li className="hover:text-secondary cursor-pointer">
 									Other Train Lines
 								</li>
@@ -69,7 +70,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className="col-span-1 flex flex-col gap-4">
+					<div className="col-span-1 md:items-end flex flex-col gap-4">
 						<div className="text-end">
 							Download the application THE SKYTRAINs
 						</div>
@@ -103,19 +104,19 @@ export default function Footer() {
 
 			<div className="bg-primary py-2 pt-4">
 				<div className="text-[12px] text-primary mx-[10%] flex flex-col gap-4">
-					<div className="grid grid-cols-3">
-						<div className="col-span-2 flex flex-col gap-1">
-							<h1 className="text-lg">
+					<div className="grid grid-cols-1 md:grid-cols-3">
+						<div className="col-span-1 md:col-span-2 flex flex-col gap-1">
+							<h1 className="text-lg  md:text-start">
 								NORTHERN BANGKOK MONORAIL COMPANY LIMITED
 							</h1>
 							<p>
 								No. 21, Soi Choi Phuang, Vibhavadi Rangsit Road,Chom Phon
 								Sub-district, Chatuchak District, Bangkok 10900
 							</p>
-							<p>Tel: 0 2617 6111</p>
+							<p className="">Tel: 0 2617 6111</p>
 						</div>
-						<div className="col-span-1 flex flex-col gap-1">
-							<p>
+						<div className="col-span-1 flex flex-col gap-1 mt-4 md:mt-0">
+							<p className="">
 								This site is displayed well in Chrome(43) : Safari(9) :
 								Firefox(16)
 							</p>
@@ -124,7 +125,7 @@ export default function Footer() {
 					</div>
 
 					<div className="border border-gray-600"></div>
-					<p className="text-center text-gray-300">
+					<p className="text-center text-gray-300 tracking-wider py-2">
 						Copyright 2566 NORTHERN BANGKOK MONORAIL COMPANY LIMITED, All Rights
 						Reserved
 					</p>

@@ -3,13 +3,15 @@ import { TbWorld } from "react-icons/tb";
 import { FiChevronDown } from "react-icons/fi";
 import logo from "../assets/image/logo.png";
 import { useNavigate } from "react-router-dom";
+import { Sidenav } from "../components/Sidenav";
 
 export default function Header() {
 	const navigate = useNavigate();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<nav className="sticky top-0 left-0 z-50 shadow-md">
-			<header className="bg-third py-2 text-[#2e383c] font-[300]">
+		<nav className="sticky top-0 left-0 z-50 shadow-md w-full">
+			{/* hearder 1 */}
+			<header className="hidden xl:block bg-third py-2 text-[#2e383c] font-[300]">
 				<section className="flex items-center justify-between mx-[10%] text-[12px]">
 					<div className="flex gap-1">
 						<div
@@ -43,20 +45,35 @@ export default function Header() {
 							<div
 								className={`${
 									isOpen ? "block" : "hidden"
-								} absolute top-6 right-0 bg-white w-full flex flex-col items-center justify-center gap-2 py-2 rounded-md font-semibold`}
+								} absolute top-6 right-0 bg-white w-full flex flex-col items-center justify-center rounded-md shadow-sm font-semibold`}
 							>
-								<button>EN</button>
-								<button>TH</button>
+								<button className="w-full py-2 hover:bg-gray-300">EN</button>
+								<button className="w-full py-2 hover:bg-gray-300">TH</button>
 							</div>
 						</div>
 					</div>
 				</section>
 			</header>
-			<header className="bg-primary py-2">
-				<div className="mx-[10%] flex items-center ">
-					<div className="w-[48px] h-[50px] mr-[100px]">
+
+			{/* header 2 */}
+			<header className="bg-primary py-1 ">
+				<div className="xl:hidden flex items-center ">
+					<Sidenav />
+					<button
+						onClick={() => navigate(`/`)}
+						className="w-[41px] h-[40px] mx-auto  cursor-pointer"
+					>
 						<img src={logo} alt="logo" className="w-full h-full" />
-					</div>
+					</button>
+				</div>
+
+				<div className="hidden mx-[10%] xl:flex items-center ">
+					<button
+						onClick={() => navigate(`/`)}
+						className="w-[48px] h-[50px] mr-[100px] cursor-pointer"
+					>
+						<img src={logo} alt="logo" className="w-full h-full" />
+					</button>
 					<ul className="flex gap-6 items-center justify-center text-primary text-sm">
 						<li className="flex items-center gap-2">
 							About Us <FiChevronDown />

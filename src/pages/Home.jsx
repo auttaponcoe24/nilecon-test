@@ -1,5 +1,7 @@
 import React from "react";
-import picHome from "../assets/image/pic1.jpeg";
+import picHome1 from "../assets/image/picHome1.jpeg";
+import picHome2 from "../assets/image/picHome2.jpeg";
+import picHome3 from "../assets/image/picHome3.png";
 import picTrain from "../assets/image/pic2.png";
 import { HiOutlineSwitchVertical } from "react-icons/hi";
 import bt1 from "../assets/image/bt1.png";
@@ -9,8 +11,12 @@ import bt4 from "../assets/image/bt4.png";
 import bt5 from "../assets/image/bt5.png";
 import bt6 from "../assets/image/bt6.png";
 import Card from "../components/Card";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowRoundForward } from "react-icons/io";
 import { FaFacebook, FaYoutube, FaLine } from "react-icons/fa";
+
+import pic3 from "../assets/image/pic3.jpeg";
+
+import { Carousel } from "@material-tailwind/react";
 
 export default function Home() {
 	return (
@@ -18,15 +24,32 @@ export default function Home() {
 			<section>
 				{/* section 1 */}
 				<div className="max-h-[450px]">
-					<img
-						src={picHome}
+					<Carousel className="rounded-xl" autoplay={true} loop={true}>
+						<img
+							src={picHome1}
+							alt="image 1"
+							className="h-full w-full object-cover"
+						/>
+						<img
+							src={picHome2}
+							alt="image 2"
+							className="h-full w-full object-cover"
+						/>
+						<img
+							src={picHome3}
+							alt="image 3"
+							className="h-full w-full object-cover"
+						/>
+					</Carousel>
+					{/* <img
+						src={picHome1}
 						alt="picHome"
 						className="w-full h-full object-cover"
-					/>
+					/> */}
 				</div>
 
 				{/* section 2 */}
-				<div className="grid grid-cols-2 mx-[10%] my-10">
+				<div className="grid grid-cols-1 xl:grid-cols-2 mx-[5%] xl:mx-[10%] my-10">
 					<div className="col-span-1 flex flex-col gap-6">
 						<h1 className="text-3xl text-center">The MRT Pink Line</h1>
 						<div className="border-[2px] border-primary w-14 mx-auto rounded-full"></div>
@@ -64,7 +87,7 @@ export default function Home() {
 
 				{/* section 3 */}
 				<div className="bg-[url('https://www.nbm.co.th/assets/images/home/routemap.jpg')] bg-cover py-4">
-					<div className="grid grid-cols-2 mx-[10%] my-10">
+					<div className="grid grid-cols-1 mx-[5%] xl:grid-cols-2 xl:mx-[10%] my-10">
 						<div className="col-span-1">
 							<h1 className="text-3xl text-center text-primary mb-4">
 								The MRT Pink Line
@@ -73,7 +96,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="col-span-1"></div>
-					<div className="grid grid-cols-2 gap-4 mx-[10%] my-10">
+					<div className="grid grid-cols-1 mx-[5%] xl:grid-cols-2 xl:mx-[10%] gap-4 my-10">
 						<div className="col-span-1 flex flex-col gap-6 text-primary">
 							<div className="bg-primary p-6 rounded-lg flex flex-col gap-5">
 								<h1 className="text-xl font-semibold">Station and Places</h1>
@@ -138,7 +161,7 @@ export default function Home() {
 				</div>
 
 				{/* section 4 */}
-				<div className="flex flex-col mx-[10%] py-4">
+				<div className="flex flex-col mx-[5%] xl:mx-[10%] py-4">
 					<div className="flex flex-col items-center justify-center gap-4 mb-8">
 						<h1 className="text-3xl">Promotions</h1>
 						<div className="border-[2px] border-primary w-24 mx-auto rounded-full"></div>
@@ -152,11 +175,16 @@ export default function Home() {
 					<div className="flex flex-col gap-4">
 						<h1 className="text-center text-3xl">News & Activities</h1>
 						<div className="border-[2px] border-primary w-14 mx-auto rounded-full"></div>
-						<div className="flex items-center justify-center gap-4">
+						<div className="hidden md:flex items-center justify-center gap-4">
 							<Card />
 							<Card />
 							<Card />
 						</div>
+						<Carousel className="md:hidden mb-4" autoplay={true} loop={true}>
+							<Card />
+							<Card />
+							<Card />
+						</Carousel>
 						<button className="flex items-center justify-center">
 							<p>See more</p>
 							<IoIosArrowForward />
@@ -166,10 +194,129 @@ export default function Home() {
 
 				{/* section 5 */}
 				<div className="bg-[url('https://www.nbm.co.th/assets/images/home/elib.png')] bg-cover py-4 bg-third">
-					<div className="mx-[10%] my-10">
-						<h1 className="text-center text-3xl">E-Library</h1>
+					<div className="mx-[5%] xl:mx-[10%] my-10 flex flex-col gap-4">
+						<h1 className="text-center text-3xl ">E-Library</h1>
 						<div className="border-[2px] border-primary w-14 mx-auto rounded-full"></div>
-						<div></div>
+
+						<Carousel
+							className="mb-4 md:w-[300px] mx-auto md:hidden"
+							autoplay={true}
+							loop={true}
+						>
+							{/* <div className="row-span-1"> */}
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+							{/* </div> */}
+						</Carousel>
+
+						<div className="hidden md:flex gap-1 overflow-hidden">
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+							<div className=" relative flex items-center justify-center">
+								<div className="absolute w-full h-full bg-black/60 rounded-xl flex flex-col gap-4 justify-center pl-6">
+									<div className="text-primary">
+										<h1 className="text-xl">ระบบรักษาความปลอดภัย</h1>
+										<h3>Security System</h3>
+									</div>
+									<button className="flex items-center gap-2 bg-white p-2 rounded-lg text-sm self-start">
+										More <IoIosArrowRoundForward />
+									</button>
+								</div>
+								<div className="w-[364px] h-[162px]">
+									<img
+										src={pic3}
+										alt="picCard"
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</div>
+							</div>
+						</div>
 
 						<button className="flex items-center justify-center">
 							<p>See more</p>
@@ -179,10 +326,10 @@ export default function Home() {
 				</div>
 
 				{/* section 6 */}
-				<div className="mx-[10%] my-10">
+				<div className="mx-[5%] xl:mx-[10%] my-10">
 					<h1 className="text-3xl">Contact Us</h1>
 					<div className="border-[2px] border-primary w-8 rounded-full mb-4"></div>
-					<div className="grid grid-cols-3">
+					<div className="grid grid-cols-1 xl:grid-cols-3">
 						<div className="col-span-1 flex flex-col items-start justify-end gap-2">
 							<div className="font-semibold">Call Center</div>
 							<div className="text-md text-gray-600">
@@ -190,39 +337,41 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div className="col-span-2 flex items-center justify-center gap-20">
-							<a
-								href="https://www.facebook.com/MRTPinkLine/"
-								target="_blank"
-								className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-							>
-								<FaFacebook size={60} className="hover:text-light-blue-600" />
-								<p>MRTPinkLine</p>
-							</a>
-							<a
-								href="https://line.me/R/ti/p/@492nlrdh"
-								target="_blank"
-								className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-							>
-								<FaLine size={60} className="hover:text-green-600" />
-								<p>Pinkyellowline</p>
-							</a>
-							<a
-								href="https://www.youtube.com/channel/UCXB9CAlDbhjNE-UDazg7fEw"
-								target="_blank"
-								className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-							>
-								<FaYoutube size={60} className="hover:text-red-600" />
-								<p>MRTPinkLine</p>
-							</a>
-							<a
-								href="https://twitter.com/MRTPinkLine"
-								target="_blank"
-								className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-							>
-								<div className="bg-[url('https://www.nbm.co.th/assets/images/home/icon/tw.jpg')] hover:bg-[url('https://www.nbm.co.th/assets/images/home/icon/Group%20361.png')] w-[70px] h-[70px] bg-cover"></div>
-								<p>@MRTPinkLine</p>
-							</a>
+						<div className="col-span-1 xl:col-span-2 flex items-center justify-center gap-20 mt-4">
+							<div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+								<a
+									href="https://www.facebook.com/MRTPinkLine/"
+									target="_blank"
+									className=" flex flex-col items-center justify-center gap-2 cursor-pointer"
+								>
+									<FaFacebook size={60} className="hover:text-light-blue-600" />
+									<p>MRTPinkLine</p>
+								</a>
+								<a
+									href="https://line.me/R/ti/p/@492nlrdh"
+									target="_blank"
+									className="flex flex-col items-center justify-center gap-2 cursor-pointer"
+								>
+									<FaLine size={60} className="hover:text-green-600" />
+									<p>Pinkyellowline</p>
+								</a>
+								<a
+									href="https://www.youtube.com/channel/UCXB9CAlDbhjNE-UDazg7fEw"
+									target="_blank"
+									className="flex flex-col items-center justify-center gap-2 cursor-pointer"
+								>
+									<FaYoutube size={60} className="hover:text-red-600" />
+									<p>MRTPinkLine</p>
+								</a>
+								<a
+									href="https://twitter.com/MRTPinkLine"
+									target="_blank"
+									className="flex flex-col items-center justify-center gap-2 cursor-pointer"
+								>
+									<div className="bg-[url('https://www.nbm.co.th/assets/images/home/icon/tw.jpg')] hover:bg-[url('https://www.nbm.co.th/assets/images/home/icon/Group%20361.png')] w-[70px] h-[70px] bg-cover"></div>
+									<p>@MRTPinkLine</p>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
